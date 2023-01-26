@@ -1,7 +1,7 @@
 const header = {
     // all the properties are optional - can be left empty or deleted
     // homepage should be the link to the live portfolio
-    homepage: 'https://andersontan1998.github.io/Portfolio/',
+    homepage: 'https://www.google.com/',
     title: 'AT.',
 }
   
