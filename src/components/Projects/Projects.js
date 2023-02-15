@@ -15,11 +15,11 @@ const Projects = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleClick = () => {
-      setShowPopup(true);
+    setShowPopup(true);
   };
 
   const handleClose = () => {
-      setShowPopup(false);
+    setShowPopup(false);
   };
 
   //used to stop scrolling in popup layer
@@ -48,8 +48,7 @@ const Projects = () => {
       </div>
       <div className='all__project__btn'>
         <button className='link link--icon' onClick={handleClick}>
-          <span className="arrow-text">See All Projects</span>
-          <ArrowForwardIcon className="arrow-icon" fontSize="inherit"/>
+          <span className="arrow-text">See More</span>
         </button>
       </div>
       {showPopup && (

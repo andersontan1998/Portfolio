@@ -10,7 +10,7 @@ const about = {
     name: 'Anderson Tan',
     role: 'Full-Stack Web Developer',
     description:
-        'Software Engineer based in New York City with expertise in web and mobile app development. I also enjoy scripting to automate and simplify daily tasks. Take a look around!',
+        'Software Engineer based in New York City with expertise in web and mobile app development. I also enjoy scripting to automate and simplify daily tasks.',
     resume: 'https://drive.google.com/file/d/1GRAV_sZontT2jGPe7F3Yy566kuWkbE2G/view?usp=share_link',
     social: {
         linkedin: 'https://www.linkedin.com/in/andersontan1998/',
