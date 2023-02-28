@@ -64,7 +64,6 @@
     width: 90%;
     height: 90%;
     max-width: 1000px;
-    overflow: hidden;
     /* z-index: 9999; */
     /* Call fadeIn animation and add fadeIn animation properties */
     animation-name: fadeIn;
@@ -72,7 +71,20 @@
     animation-fill-mode: none;
 }
 
-.popup-content-inner {
-    height: 100%;
-    overflow: auto;
+/* text color for 'Frontend', 'Backend', 'Data', and 'To be added' hooks */
+.iKctXO {
+    color: #2978b5 !important;
+}
+
+/* text color for 'Summary' hook only due to media field, color is inherited from .light instead */
+.lfAmiB {
+    color: #2978b5 !important;
+}
+
+.cMduzL:hover {
+    transform: scale(200%);
+    transform-origin: top left;
+    /* for vertical
+    position: relative;
+    margin-top: 88px; */
 }
