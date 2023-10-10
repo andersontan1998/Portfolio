@@ -1,7 +1,8 @@
 import uniqid from 'uniqid'
-import { projects } from '../../portfolio'
+import { featured_projects } from '../../portfolio'
 import ProjectContainer from '../ProjectContainer/ProjectContainer'
 import './Projects.css'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 import React, { useState, useEffect } from 'react';
 //use material ui icons from version 4
@@ -9,9 +10,23 @@ import React, { useState, useEffect } from 'react';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 
-const Projects = () => {
+const Projects = ({ onButtonClick }) => {
+
+  const navigate = useNavigate();
+  //used to get the current URL path and conditionally render the See More button and the Projects heading based on the path
+  const location = useLocation();
+
+  //when the See More button is clicked, the handleClick function is called
+  const handleClick = () => {
+    //call the window.scrollTo() method to reset the scroll position
+    window.scrollTo(0, 0);
+    //call this callback function when the button is clicked as well
+    onButtonClick();
+    navigate('/Portfolio/Projects');
+  }
 
   //for coming soon pop-up
+  /*
   const [showPopup, setShowPopup] = useState(false);
 
   const handleClick = () => {
@@ -21,6 +36,7 @@ const Projects = () => {
   const handleClose = () => {
     setShowPopup(false);
   };
+  */
 
   //used to stop scrolling in popup layer
   /*
@@ -34,26 +50,31 @@ const Projects = () => {
   }, [showPopup]);
   */
 
-  if (!projects.length) return null
+  const isProjectsPage = location.pathname === '/Portfolio/Projects';
+
+  if (!featured_projects.length) return null
 
 
   return (
     <section id='projects' className='section projects'>
-      <h2 className='section__title'>Projects</h2>
+      <h2 className='section__title'>{isProjectsPage ? 'Featured Projects' : 'Projects'}</h2>
 
       <div className='projects__grid'>
-        {projects.map((project) => (
-          <ProjectContainer key={uniqid()} project={project} />
+        {featured_projects.map((featured_project) => (
+          <ProjectContainer key={uniqid()} featured_project={featured_project} />
         ))}
       </div>
-      <div className='all__project__btn'>
-        <button className='link link--icon' onClick={handleClick}>
-          <span className="arrow-text">See More</span>
-        </button>
-      </div>
+      {!isProjectsPage && (
+        <div className='all__project__btn'>
+          <button className='link link--icon' onClick={handleClick}>
+            <span className="arrow-text">See More</span>
+          </button>
+        </div>
+      )}
+      {/* stopPropagation is used to prevent users from clicking on links under this pop-up layer which is at z-index: 2 */}
+      {/* 
       {showPopup && (
         <div className="popup" onClick={handleClose}>
-          {/* stopPropagation is used to prevent users from clicking on links under this pop-up layer which is at z-index: 2 */}
           <div className="popup-content" onClick={e => e.stopPropagation()}>
             <h3>Coming Soon</h3>
             <br/>
@@ -62,6 +83,7 @@ const Projects = () => {
           </div>
         </div>
       )}
+      */}
     </section>
   )
 }

@@ -1,3 +1,94 @@
 .contact {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+}
+  
+.contact__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+}
+  
+.contact__form {
+    width: 60%;
+    box-shadow: var(--shadow);
+    padding: 2em;
+}
+  
+.contact__form label,
+.contact__form input,
+.contact__form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.contact__form input[type="text"],
+.contact__form input[type="email"],
+.contact__form textarea {
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px 0;
+    outline: 2px solid #0077b6;
+}
+  
+@media screen and (max-width: 768px) {
+    .contact__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact__form {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+.contact__container a {
+    display: flex;
+    align-items: center;
+}
+
+.buttons__container{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.or {
+    margin: 10px 0;
+}
+
+.message-delivered-popup {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: showPopup 0.5s ease-in-out forwards;
+}
+
+@keyframes showPopup {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
 }

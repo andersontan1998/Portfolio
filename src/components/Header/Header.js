@@ -1,8 +1,9 @@
 import { header } from '../../portfolio'
 import Navbar from '../Navbar/Navbar'
+import ProjectsNavbar from '../ProjectsNavbar/ProjectsNavbar'
 import './Header.css'
 
-const Header = () => {
+const Header = ({ path, handleBackButtonClick }) => { //pass the path as a prop
   const { homepage, title } = header
 
   return (
@@ -16,7 +17,11 @@ const Header = () => {
           title
         )}
       </h3>
-      <Navbar />
+      {path === '/Portfolio/Projects' ? ( // conditionally render the Navbar component based on the path
+        <ProjectsNavbar onButtonClick={handleBackButtonClick}/>
+      ) : (
+        <Navbar />
+      )}
     </header>
   )
 }

@@ -4,8 +4,6 @@ import './Skills.css'
 
 const Skills = () => {
   if (!skills.length) return null
-
-  console.log(skills)
   
   return (
     <section className='section skills' id='skills'>
